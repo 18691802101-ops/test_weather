@@ -14,15 +14,17 @@ function getWeather() {
     }
 
     const apiKey = 'c295211ff94fb5cd1024ee18afc642b5';
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=zh_cn`;
+    const encodedCity = encodeURIComponent(city);
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodedCity},CN&appid=${apiKey}&units=metric&lang=zh_cn`;
 
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
+            console.log('API Response:', data);
             if (data.cod === 200) {
                 displayWeather(data);
             } else {
-                alert('城市未找到，请检查输入');
+                alert(`城市未找到: ${data.message}`);
             }
         })
         .catch(error => {
