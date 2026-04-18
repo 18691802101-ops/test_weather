@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天气查询</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>天气查询</h1>
+        <div class="search-container">
+            <input type="text" id="city-input" placeholder="请输入城市名">
+            <button id="search-btn">查询</button>
+        </div>
+        <div class="weather-result" id="weather-result">
+            <div class="weather-info" id="weather-info">
+                <h2 id="city-name">请输入城市名查询天气</h2>
+                <div class="temperature" id="temperature"></div>
+                <div class="condition" id="condition"></div>
+                <div class="humidity" id="humidity"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
